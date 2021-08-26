@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App" style={{backgroundImage: logo}}>
       <header className="App-header">
-        <h1> The intelligence that boosts your business is on the way!!</h1>
+        <h1> The intelligence that helps your business is on its way!!</h1>
       </header>
     </div>
   );
