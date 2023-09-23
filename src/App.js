@@ -18,11 +18,18 @@ class App extends Component {
 
  handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+   console.log(this.state);
 
-    axios.post('https://sheet.best/api/sheets/f0effe0c-d6d9-4704-861d-a98c5220e8df', this.state)
+   const headers = {
+     'Content-Type': 'application/json'
+   }
+
+   axios.post('https://script.google.com/macros/s/AKfycbxm83jpBa8QTfb0ZMwf9Ar_f6KBONdodoZuQ0g-fPfcSKarKhqjNRuHab41H-uC2L6y/exec', this.state, {
+     headers: headers
+   })
     .then(response => {
       console.log(response);
+      
     })
   }
 
@@ -41,6 +48,8 @@ class App extends Component {
              </div>  
            </form>
          </header>
+       <div className="message" id="message">
+       </div>
        </div>
      );
   }
