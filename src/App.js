@@ -23,6 +23,9 @@ class App extends Component {
     axios.post('https://sheet.best/api/sheets/f0effe0c-d6d9-4704-861d-a98c5220e8df', this.state)
     .then(response => {
       console.log(response);
+      this.setState ( {
+        email: ''
+      });
     })
   }
 
@@ -41,6 +44,9 @@ class App extends Component {
              </div>  
            </form>
          </header>
+         <div>
+            <label className="message" id="message"/>
+         </div>
        </div>
      );
   }
