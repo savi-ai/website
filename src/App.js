@@ -8,7 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
+      email: '',
+      message: ''
     }
   }
 
@@ -24,13 +25,15 @@ class App extends Component {
     .then(response => {
       console.log(response);
       this.setState ( {
-        email: ''
+        email: '',
+        message: "Thank you! We will notify you soon."
       });
+      
     })
   }
 
   render() {
-    const { email } = this.state;   
+    const { email, message } = this.state;   
      return (
        <div className="App" style={{backgroundImage: logo}}>
          <header className="App-header">
@@ -43,10 +46,11 @@ class App extends Component {
                <button type="submit" className="btn btn-primary">Submit</button>
              </div>  
            </form>
+           <div>
+             <label className="message" id="message">{message}</label>
+           </div>
          </header>
-         <div>
-            <label className="message" id="message"/>
-         </div>
+       
        </div>
      );
   }
